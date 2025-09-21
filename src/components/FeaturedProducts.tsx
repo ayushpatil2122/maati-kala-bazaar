@@ -24,7 +24,7 @@ const products = [
     originalPrice: "₹399",
     rating: 4.9,
     reviews: 89,
-    image: "./assets/diyas.png",
+    image: productsImage,
     category: "Festival",
     isBestseller: true,
   },
