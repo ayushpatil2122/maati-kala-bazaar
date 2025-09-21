@@ -47,6 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        clay: {
+          primary: "hsl(var(--clay-primary))",
+          secondary: "hsl(var(--clay-secondary))",
+          tertiary: "hsl(var(--clay-tertiary))",
+          warm: "hsl(var(--clay-warm))",
+          dark: "hsl(var(--clay-dark))",
+          gold: "hsl(var(--clay-gold))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -58,10 +66,18 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      backgroundImage: {
+        'gradient-clay': 'var(--gradient-clay)',
+        'gradient-warm': 'var(--gradient-warm)',
+        'gradient-hero': 'var(--gradient-hero)',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        'hindi': ['Noto Sans Devanagari', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
