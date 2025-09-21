@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -125,8 +126,8 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-clay-primary text-clay-primary hover:bg-clay-primary hover:text-white">
-            View All Products
+          <Button size="lg" variant="outline" className="border-clay-primary text-clay-primary hover:bg-clay-primary hover:text-white" asChild>
+            <Link to="/products">View All Products</Link>
           </Button>
         </div>
       </div>
