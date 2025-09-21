@@ -2,7 +2,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingCart, Plus, Minus, Trash2 } from 'lucide-react';
+import { ShoppingCart, Plus, Minus, Trash2, MessageCircle } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { useToast } from '@/hooks/use-toast';
 
@@ -14,10 +14,63 @@ const CartSheet = ({ children }: CartSheetProps) => {
   const { items, updateQuantity, removeFromCart, totalItems, totalPrice, clearCart } = useCart();
   const { toast } = useToast();
 
-  const handleCheckout = () => {
+  // Replace with your actual WhatsApp business number (with country code, without +)
+  const WHATSAPP_NUMBER = "918770631586"; // Example: Indian number format
+
+  const formatWhatsAppMessage = () => {
+    let message = "*🛒 New Order from Clay Store*\n\n";
+    message += "*📦 Order Details:*\n";
+    
+    items.forEach((item, index) => {
+      message += `${index + 1}. *${item.name}*\n`;
+      if (item.variant) {
+        message += `   Variant: ${item.variant}\n`;
+      }
+      message += `   Quantity: ${item.quantity}\n`;
+      message += `   Price: ₹${item.price} each\n`;
+      message += `   Subtotal: ₹${item.price * item.quantity}\n\n`;
+    });
+
+    const shippingCost = totalPrice >= 999 ? 0 : 50;
+    const finalTotal = totalPrice + shippingCost;
+
+    message += "*💰 Payment Summary:*\n";
+    message += `Subtotal: ₹${totalPrice}\n`;
+    message += `Shipping: ${shippingCost === 0 ? 'Free' : `₹${shippingCost}`}\n`;
+    message += `*Total: ₹${finalTotal}*\n\n`;
+
+    message += "*📞 Please confirm this order and provide:*\n";
+    message += "• Delivery address\n";
+    message += "• Preferred delivery time\n";
+    message += "• Any special instructions\n\n";
+    
+    message += "Thank you for choosing our clay products! 🏺";
+
+    return encodeURIComponent(message);
+  };
+
+  const handleWhatsAppCheckout = () => {
+    if (items.length === 0) {
+      toast({
+        title: "Cart is empty",
+        description: "Please add items to your cart before checkout",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const message = formatWhatsAppMessage();
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+    
+    // Open WhatsApp in a new tab/window
+    window.open(whatsappUrl, '_blank');
+
+    // Clear the cart after successful order initiation
+    clearCart();
+
     toast({
-      title: "Checkout requires backend",
-      description: "Connect Supabase to enable payment processing with Razorpay/Stripe",
+      title: "Order sent successfully!",
+      description: "Your cart has been cleared and order details sent to WhatsApp. Complete your order there!",
     });
   };
 
@@ -121,11 +174,12 @@ const CartSheet = ({ children }: CartSheetProps) => {
 
                 <div className="space-y-2 mt-4">
                   <Button 
-                    onClick={handleCheckout}
-                    className="w-full bg-clay-primary hover:bg-clay-primary/90"
+                    onClick={handleWhatsAppCheckout}
+                    className="w-full bg-green-600 hover:bg-green-700 text-white"
                     size="lg"
                   >
-                    Proceed to Checkout
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Order via WhatsApp
                   </Button>
                   <Button 
                     onClick={clearCart}
