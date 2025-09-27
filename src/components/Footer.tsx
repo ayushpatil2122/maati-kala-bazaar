@@ -87,7 +87,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Categories</h4>
             <ul className="space-y-3">
-              {['Home Decor', 'Kitchenware', 'Tableware', 'Garden Planters', 'Festival Items', 'Gift Sets'].map((category) => (
+              {['Festival', 'Kitchenware', 'Spiritual', 'Home Decor', 'Gift Sets'].map((category) => (
                 <li key={category}>
                   <a href="#" className="text-white/80 hover:text-clay-gold transition-colors">
                     {category}
@@ -104,8 +104,8 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-clay-gold mt-1 flex-shrink-0" />
                 <p className="text-white/80 text-sm">
-                  123 Pottery Lane, Artisan Quarter<br />
-                  New Delhi, India 110001
+                  Laxai Chowk <br />
+                  Pune 411057
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -114,7 +114,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-clay-gold flex-shrink-0" />
-                <p className="text-white/80 text-sm">hello@maatikikala.in</p>
+                <p className="text-white/80 text-sm">maatikikala@gmail.com</p>
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/60 text-sm">
-              © 2024 Maati Ki Kala. All rights reserved. Made with ❤️ for Indian artisans.
+              © 2025 Maati Ki Kala. All rights reserved. Made with ❤️ for Indian artisans.
             </p>
             <div className="flex items-center gap-6 mt-4 md:mt-0">
               <a href="#" className="text-white/60 hover:text-clay-gold text-sm transition-colors">

@@ -4,53 +4,73 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Heart, ShoppingCart } from "lucide-react";
 import productsImage from "@/assets/clay-products-collection.jpg";
-
-const products = [
+import { useCart } from '@/hooks/useCart';
+export const products = [
   {
-    id: 1,
-    name: "Handcrafted Terracotta Vase",
-    price: "₹899",
-    originalPrice: "₹1,299",
+    id: 'mud-diyas',
+    name: 'Mud Diyas Set',
+    price: "80₹",
     rating: 4.8,
-    reviews: 124,
-    image: "https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202306/0442/artisan-handcrafted-terracotta-vases-5-l.jpg",
-    category: "Home Decor",
-    isNew: true,
+    reviews: 156,
+    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/353190764/PR/SL/EK/162069620/traditional-3-inch-9-clay-diya-set-1000x1000.jpg",
+    category: 'Festival',
+    description: 'Hand-painted mud diyas available in multiple colors (green, orange, pink, blue). Perfect for Diwali and festive décor.',
+    variants: ['Set of 4', 'Set of 8', 'Set of 12'],
+    colors: ['Multi-color', 'Traditional', 'Modern'],
+    inStock: true,
   },
   {
-    id: 2,
-    name: "Traditional Clay Diya Set",
-    price: "₹299",
-    originalPrice: "₹399",
+    id: 'charan-paduka',
+    name: 'Clay Feet (Charan Paduka)',
+    price: "40₹",
     rating: 4.9,
     reviews: 89,
-    image: "https://5.imimg.com/data5/SELLER/Default/2023/10/353190764/PR/SL/EK/162069620/traditional-3-inch-9-clay-diya-set-1000x1000.jpg",
-    category: "Festival",
-    isBestseller: true,
+    image: "https://i.etsystatic.com/24129554/r/il/b681fe/4146536274/il_794xN.4146536274_6lwv.jpg",
+    category: 'Spiritual',
+    description: 'Traditional terracotta Lakshmi feet, used for auspicious occasions and home décor.',
+    variants: ['Small', 'Medium'],
+    colors: ['Natural', 'Painted'],
+    inStock: true,
   },
   {
-    id: 3,
-    name: "Ceramic Tea Cup Set",
-    price: "₹1,299",
-    originalPrice: "₹1,799",
+    id: 'mud-bottle',
+    name: 'Hand-painted Mud Bottle',
+    price: "220₹",
     rating: 4.7,
-    reviews: 156,
-    image: "https://www.stylemyway.com/pub/media/catalog/product/cache/ecf0f528ef60e82ed6af19126930ed26/k/c/kcp1562_1.jpg",
-    category: "Kitchenware",
+    reviews: 124,
+    image: "https://i.pinimg.com/736x/51/19/03/511903bc56b7bfdf97130ba3a6aaea45.jpg",
+    category: 'Kitchenware',
+    description: 'Eco-friendly mud water bottle with floral hand-painted designs, keeps water cool naturally.',
+    variants: ['1 Litre'],
+    colors: ['Floral Blue', 'Floral Red', 'Traditional'],
+    inStock: true,
   },
   {
-    id: 4,
-    name: "Decorative Clay Planter",
-    price: "₹649",
-    originalPrice: "₹849",
+    id: 'Clay cups',
+    name: 'Hand made clay cups',
+    price: "140₹",
     rating: 4.6,
     reviews: 78,
-    image: "https://mobileimages.lowes.com/product/converted/047625/047625157771.jpg",
-    category: "Garden",
+    image:"https://cdn.shopify.com/s/files/1/0566/5665/8476/products/Copyof1_0005_DSC06436-279107_1946x.jpg?v=1678192342",
+    category: 'Kitchenware',
+    description: 'Clay cups with carved and painted designs. Perfect for tea, coffee, or as gift items.',
+    variants: ['Plain', 'Artistic Figurine'],
+    colors: ['Natural', 'Painted', 'Carved'],
+    inStock: true,
   },
 ];
 
 const FeaturedProducts = () => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (product: typeof products[0]) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: parseFloat(product.price),
+      image: product.image,
+    });
+  };
   return (
     <section id="products" className="py-20 bg-clay-tertiary">
       <div className="container mx-auto px-4">
@@ -115,7 +135,7 @@ const FeaturedProducts = () => {
                       {product.originalPrice}
                     </span>
                   </div>
-                  <Button size="sm" className="bg-clay-primary hover:bg-clay-primary/90">
+                  <Button onClick={() => handleAddToCart(product)} size="sm" className="bg-clay-primary hover:bg-clay-primary/90">
                     <ShoppingCart className="w-4 h-4 mr-1" />
                     Add
                   </Button>

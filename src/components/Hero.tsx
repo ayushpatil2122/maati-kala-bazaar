@@ -36,22 +36,6 @@ const Hero = () => {
               Watch Artisans at Work
             </Button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 text-white">
-            <div>
-              <div className="text-3xl font-bold text-clay-gold">500+</div>
-              <div className="text-sm text-white/80">Unique Products</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-clay-gold">50+</div>
-              <div className="text-sm text-white/80">Master Artisans</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-clay-gold">1000+</div>
-              <div className="text-sm text-white/80">Happy Customers</div>
-            </div>
-          </div>
         </div>
       </div>
 

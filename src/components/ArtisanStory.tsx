@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Award, Users, Calendar } from "lucide-react";
+import { MapPin, Award, Users, Lightbulb } from "lucide-react";
 import artisanImage from "@/assets/artisan-at-work.jpg";
 
 const ArtisanStory = () => {
@@ -11,20 +11,21 @@ const ArtisanStory = () => {
           {/* Content */}
           <div>
             <Badge className="bg-clay-gold text-clay-dark mb-6">
-              Our Heritage
+              Our Mission
             </Badge>
             
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Stories Shaped by 
+              Reviving Heritage
               <span className="text-clay-primary font-hindi block">
-                हस्तकला की परंपरा
+                आधुनिक युग में
               </span>
             </h2>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              For over three generations, our master artisans have been preserving the ancient 
-              art of clay crafting. Each piece in our collection carries the soul of Indian 
-              heritage and the skilled hands that shaped it with love and dedication.
+              We're a passionate startup on a mission to bridge ancient Indian craftsmanship 
+              with modern homes. By partnering with skilled artisans across India, we're 
+              creating a platform that celebrates traditional clay artistry while providing 
+              sustainable livelihoods to master craftsmen.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -33,18 +34,18 @@ const ArtisanStory = () => {
                   <Users className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-foreground">50+ Artisans</div>
-                  <div className="text-sm text-muted-foreground">Master Craftsmen</div>
+                  <div className="font-bold text-foreground">25+ Artisans</div>
+                  <div className="text-sm text-muted-foreground">Growing Network</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-clay-secondary rounded-full flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-white" />
+                  <Lightbulb className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-foreground">3 Generations</div>
-                  <div className="text-sm text-muted-foreground">Family Tradition</div>
+                  <div className="font-bold text-foreground">Founded 2025</div>
+                  <div className="text-sm text-muted-foreground">Innovation Driven</div>
                 </div>
               </div>
               
@@ -53,8 +54,8 @@ const ArtisanStory = () => {
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-foreground">15 States</div>
-                  <div className="text-sm text-muted-foreground">Across India</div>
+                  <div className="font-bold text-foreground">8 States</div>
+                  <div className="text-sm text-muted-foreground">Expanding Reach</div>
                 </div>
               </div>
               
@@ -63,18 +64,18 @@ const ArtisanStory = () => {
                   <Award className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-foreground">25+ Awards</div>
-                  <div className="text-sm text-muted-foreground">Recognition</div>
+                  <div className="font-bold text-foreground">500+ Orders</div>
+                  <div className="text-sm text-muted-foreground">Happy Customers</div>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-clay-primary hover:bg-clay-primary/90">
-                Meet Our Artisans
+                Meet Our Artisan Partners
               </Button>
               <Button variant="outline" size="lg" className="border-clay-primary text-clay-primary hover:bg-clay-primary hover:text-white">
-                Our Craft Process
+                Our Journey & Vision
               </Button>
             </div>
           </div>
@@ -84,7 +85,7 @@ const ArtisanStory = () => {
             <div className="relative overflow-hidden rounded-2xl">
               <img 
                 src={artisanImage} 
-                alt="Master artisan crafting clay pottery"
+                alt="Artisan partner crafting clay pottery"
                 className="w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-clay-dark/60 via-transparent to-transparent"></div>
@@ -93,8 +94,8 @@ const ArtisanStory = () => {
             {/* Floating Card */}
             <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl border border-clay-tertiary">
               <div className="text-2xl font-bold text-clay-primary mb-1">100%</div>
-              <div className="text-sm text-muted-foreground">Handcrafted</div>
-              <div className="text-sm text-muted-foreground">Authentic Products</div>
+              <div className="text-sm text-muted-foreground">Direct from</div>
+              <div className="text-sm text-muted-foreground">Artisan Partners</div>
             </div>
             
             {/* Decorative Elements */}
