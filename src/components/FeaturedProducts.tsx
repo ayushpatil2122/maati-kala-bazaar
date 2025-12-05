@@ -35,10 +35,10 @@ export const products = [
   {
     id: 'mud-bottle',
     name: 'Hand-painted Mud Bottle',
-    price: "220₹",
+    price: "279₹",
     rating: 4.7,
     reviews: 124,
-    image: "https://i.pinimg.com/736x/51/19/03/511903bc56b7bfdf97130ba3a6aaea45.jpg",
+    image: "https://priyatandoncraft.com/cdn/shop/files/59.png?v=1697085217&width=990",
     category: 'Kitchenware',
     description: 'Eco-friendly mud water bottle with floral hand-painted designs, keeps water cool naturally.',
     variants: ['1 Litre'],
